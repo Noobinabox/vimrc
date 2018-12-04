@@ -11,18 +11,23 @@ map <C-o> :NERDTreeToggle<CR>
 
 let g:lightline = {
 	\	'active': {
-	\		'left': [['mode', 'paste'], ['readonly', 'filename', 'modified']],
+	\		'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']],
 	\		'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-\	}
+\	},
+	\   'component_function': {
+    \   'gitbranch': 'fugitive#head'
+	\},
 \}
 
+
+set laststatus=2
 map ; :Files<CR>
 set number
 set backspace=indent,eol,start
 set autoindent
 set tabstop=4
 set shiftwidth=4
-autocmd VimEnter * NERDTree
+set noshowmode
 
 syntax on
 
@@ -37,6 +42,7 @@ set guioptions-=T  "remove toolbar"
 nnoremap <F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 nnoremap <F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 nnoremap <F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
+vmap <C-c> "+y
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
