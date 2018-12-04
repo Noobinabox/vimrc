@@ -15,7 +15,6 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'w0rp/ale'
 Plugin 'ervandew/supertab'
-Plugin 'jaxbot/browserlink.vim'
 
 call vundle#end()
 
