@@ -22,12 +22,14 @@ let g:lightline = {
 
 set laststatus=2
 map ; :Files<CR>
-set number
+set number relativenumber
 set backspace=indent,eol,start
 set autoindent
 set tabstop=4
 set shiftwidth=4
 set noshowmode
+set splitbelow
+set splitright
 
 syntax on
 
